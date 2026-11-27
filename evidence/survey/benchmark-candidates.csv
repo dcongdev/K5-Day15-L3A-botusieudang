@@ -1,0 +1,8 @@
+﻿phieu,input,expected,pass_criterion,type,source
+1,cách nộp bài đúng quy tắc,,,thuong,nguoi_dung: khảo sát phiếu #1
+2,"biết cụ thể luật như nào, làm những gì",,,thuong,nguoi_dung: khảo sát phiếu #2
+3,format đúng cho các file,,,thuong,nguoi_dung: khảo sát phiếu #3
+4,Tôi luôn tuân thủ đúng quy tắc và đọc hướng dẫn đầy đủ nên ko cần,,,thuong,nguoi_dung: khảo sát phiếu #4
+5,Tạo sao nộp đúng theo RUBRIC nhưng vẫn ko được điểm,,,thuong,nguoi_dung: khảo sát phiếu #5
+6,Đọc luật bài lab và xem xem các file cần Submit là những gì?,,,thuong,nguoi_dung: khảo sát phiếu #6
+8,Yêu cầu về checkpoint 2 cần làm gì?,,,thuong,nguoi_dung: khảo sát phiếu #8

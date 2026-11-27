@@ -10,7 +10,7 @@
 - **Số người dùng thật** 3 kịch bản: thấp 140 · cơ sở 175 · cao 700. Nguồn: lớp L3 hơn 700 học viên (README hackathon, cần kiểm lại) ÷ 5 / ÷ 4 người mỗi nhóm; cao = mọi học viên L3 cùng dùng *(tự ước tính)*.
 - **Giá** 3 mức model (giá gói trả phí, USD / 1M token vào · ra): gpt-5.4-nano 0,20 · 1,25 ([OpenAI](https://developers.openai.com/api/docs/models/gpt-5.4-nano), xem 27/11/2026) · gemini-3.1-flash-lite 0,25 · 1,50 ([Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/), xem 27/11/2026) · gpt-5.4-mini 0,75 · 4,50 (bảng giá OpenAI, xem 27/11/2026). Đối chiếu với `further-reading/model-prices.md` của repo đề.
 - **Tỉ lệ đạt** dùng để tính: ____/____ (__%) — lượt `run-2` (lượt 2) → `python run.py simulate --rate-from eval/run-2.csv`
-- Đo token trên model ____ (MODEL_NAME trong `.env`), tính giá model gpt-5.4-nano, gemini-3.1-flash-lite và gpt-5.4-mini. Mỗi câu hỏi = 1 lần gọi model (workflow cố định), ngữ cảnh ≤ 8 đoạn luật.
+- Đo token trên model **gemini-3.1-flash-lite** (MODEL_NAME trong `.env`; thử 27/11: ~1.400–1.900 token vào, ~100 token ra mỗi câu), tính giá model gpt-5.4-nano, gemini-3.1-flash-lite và gpt-5.4-mini. Mỗi câu hỏi = 1 lần gọi model (workflow cố định), ngữ cảnh ≤ 8 đoạn luật.
 
 ## 2. Kết quả mô phỏng
 

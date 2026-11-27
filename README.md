@@ -91,7 +91,7 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm (chọn tra_loi / hoi_lai / khong_co / tu_choi + mã đoạn) | **Thật** từ CP3 — chế độ giả khi `.env` chưa điền | Model: ____ (điền đúng `MODEL_NAME` trong `.env`). `codebase/ai.py` có sẵn nhánh openai · anthropic · gemini · ollama |
+| Lời gọi AI ở quyết định trung tâm (chọn tra_loi / hoi_lai / khong_co / tu_choi + mã đoạn) | **Thật** — đã nối 27/11 19:00 (`eval --try 3`: token > 0); chế độ giả khi `.env` chưa điền | Model: **gemini-3.1-flash-lite** (Gemini API, gói miễn phí lúc build; chi phí tính theo giá gói trả phí ở `cost/`). `codebase/ai.py` có sẵn nhánh openai · anthropic · gemini · ollama |
 | Công cụ `search_rules` (tra đoạn luật, BM25, không AI) | **Thật** | Đọc 23 file trong `data/nguon/` → 365 đoạn có mã |
 | Kiểm mã đoạn (`kiem_nguon` trong `agent.py`) | **Thật** (code) | Mã không có trong đoạn tra được bị xoá; trả lời không còn mã → "không đủ căn cứ" |
 | Kho luật | Thật nhưng **thiếu** | Có file khung `starter-repo`; **không có** `02-guide.md`, `03-rubric.md` của repo đề |

@@ -23,6 +23,8 @@ Không dán API key vào file này.
 """
 import json
 import os
+import socket
+import time
 import urllib.error
 import urllib.request
 
@@ -53,16 +55,31 @@ SHOW_RAW = False   # đổi thành True để in nguyên phản hồi của API 
 MAX_TOKENS = 1024  # trần token ra cho nhánh Claude (câu trả lời của bot ngắn)
 
 
-def post_json(url, headers, body, timeout=60):
-    """Gửi POST JSON, trả về JSON phản hồi. Chỉ dùng thư viện chuẩn (urllib). Chép từ docs/connect-model.md."""
-    req = urllib.request.Request(
-        url, data=json.dumps(body).encode("utf-8"), method="POST",
-        headers=dict({"Content-Type": "application/json"}, **headers))
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            data = json.loads(r.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        raise RuntimeError("HTTP %d: %s" % (e.code, e.read().decode("utf-8", "replace")[:300]))
+RETRY_WAIT = (3, 10)                     # thử lại tối đa 2 lần, chờ 3 giây rồi 10 giây
+RETRY_HTTP = {429, 500, 502, 503, 504}    # lỗi tạm thời phía máy chủ / giới hạn lượt gọi
+
+
+def post_json(url, headers, body, timeout=90):
+    """Gửi POST JSON, trả về JSON phản hồi. Chỉ dùng thư viện chuẩn (urllib). Chép từ docs/connect-model.md,
+    thêm tự thử lại khi timeout / mất mạng / HTTP 429, 5xx (thử 27/11: 1/10 phiên simulate bị TimeoutError).
+    Sai key, sai tên model (HTTP 400, 401, 403, 404) thì báo lỗi ngay, không thử lại."""
+    data = None
+    for attempt in range(len(RETRY_WAIT) + 1):
+        req = urllib.request.Request(
+            url, data=json.dumps(body).encode("utf-8"), method="POST",
+            headers=dict({"Content-Type": "application/json"}, **headers))
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as e:
+            msg = "HTTP %d: %s" % (e.code, e.read().decode("utf-8", "replace")[:300])
+            if e.code not in RETRY_HTTP or attempt == len(RETRY_WAIT):
+                raise RuntimeError(msg)
+        except (TimeoutError, socket.timeout, urllib.error.URLError, ConnectionError):
+            if attempt == len(RETRY_WAIT):
+                raise
+        time.sleep(RETRY_WAIT[attempt])
     if SHOW_RAW:
         print(json.dumps(data, ensure_ascii=False, indent=2)[:3000])
     return data

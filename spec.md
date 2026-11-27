@@ -12,7 +12,7 @@ Data BTC cấp đã dùng: không dùng data BTC cấp. Kho tra cứu là các f
   2. Mở README của repo nhóm → nếu không thấy thì mở `02-guide.md`, `03-rubric.md` trong repo đề, `AGENTS.md`, `docs/`, comment đầu các file mẫu.
   3. Không tìm ra thì hỏi trên nhóm chat lớp L3A / nhắn lab coach rồi chờ.
   4. Hết giờ thì đoán rồi làm.
-- Công cụ / AI đang dùng: lệnh `python run.py check` của khung kiểm được một phần format (số câu thử, cột, TEAMS.md) nhưng **không trả lời câu hỏi** về luật; một số bạn hỏi ChatGPT nhưng ChatGPT không có tài liệu của khoá — *chưa kiểm, chờ câu 4 khảo sát*.
+- Công cụ / AI đang dùng: lệnh `python run.py check` của khung kiểm được một phần format (số câu thử, cột, TEAMS.md) nhưng **không trả lời câu hỏi** về luật. Khảo sát câu 4 (n = 9, số tạm): lục README / guide / rubric 6/9 · hỏi bạn cùng nhóm 4/9 · **hỏi ChatGPT / AI khác 3/9** (AI chung không có tài liệu của khoá) · đoán rồi làm 3/9 · hỏi nhóm chat lớp 2/9.
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
 - Người dùng chính: thành viên nhóm hackathon AI20K lớp L3A **đang phụ trách nộp một checkpoint** (đội trưởng hoặc người giữ repo), trong 24 giờ trước mốc nộp.
@@ -27,7 +27,7 @@ Data BTC cấp đã dùng: không dùng data BTC cấp. Kho tra cứu là các f
 |---|---|---|---|---|---|---|
 | **A. Trợ lý tra luật nộp bài có trích nguồn** | ~175 người giữ repo *(tự ước tính: >700 học viên L3 ÷ nhóm 3–5 người)* | 20 *(khảo sát câu 7: trung vị 5 lần / tuần × 4, n = 8 — số tạm)* | 10 phút *(khảo sát câu 5: trung vị, n = 6 — số tạm)* + rủi ro mất điểm một khối (3/9 từng nộp sai) | ≈ 35.000 phút ≈ 580 giờ | Kịp: 1 công cụ tra + 1 lần gọi model | **Chọn** |
 | B. Kiểm repo trước khi nộp (thiếu file, còn `____`, lỡ commit `.env`) | như A | 1 lần / checkpoint × 4 | 5 phút *(tự ước tính)* | ≈ 3.500 phút | Kịp, nhưng phần lớn là luật cứng — `run.py check` đã làm một phần, AI không phải quyết định trung tâm | Loại |
-| C. Tóm tắt tin nhắn nhóm chat lớp thành "luật mới / thông báo mới" | toàn lớp | ____ | ____ | ____ | Không kịp: cần quyền đọc nhóm chat + ẩn danh dữ liệu cá nhân | Loại |
+| C. Tóm tắt tin nhắn nhóm chat lớp thành "luật mới / thông báo mới" | toàn lớp | chưa đo | chưa đo | chưa đo (loại trước khi đo) | Không kịp: cần quyền đọc nhóm chat + ẩn danh dữ liệu cá nhân | Loại |
 
 - **Impact / tháng** của hướng chọn = 175 người × 20 lần × 10 phút = 35.000 phút — nguồn: số người = học viên L3 "hơn 700" theo README hackathon (repo đề, **cần kiểm lại**) ÷ 4 *(tự ước tính)*; số lần = khảo sát câu 7 (trung vị 5 / tuần, n = 8); số phút = khảo sát câu 5 (trung vị ≈10, n = 6). **Số tạm từ 9 phiếu — cập nhật khi đủ n ≥ 20.** Nếu tính cả thành viên thường (khảo sát: 5/5 cũng gặp) thì số người lớn hơn nhiều.
 - Hướng ĐÃ LOẠI: **B** — giá trị thật nhưng không cần AI quyết định (luật cứng làm bằng code là đủ), trùng một phần với `run.py check`. **C** — đụng dữ liệu cá nhân trong nhóm chat, không làm kịp trong hackathon. Giả thuyết sai (khảo sát < 40% từng phải tra) thì đổi sang B (xem `evidence/hypothesis.md`).

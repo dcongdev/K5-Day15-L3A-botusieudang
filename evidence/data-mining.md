@@ -6,10 +6,12 @@
 
 ## 1. Cách đếm — viết TRƯỚC khi chạy
 
-- Data dùng: __ (file nào, từ ngày nào đến ngày nào)
-- Đếm gì: __ · trên tập nào: __ · lọc gì: __
-- **Mẫu số là gì:** __ *(lỗi hay gặp nhất là mẫu số sai)*
-- Script / công thức: __
+> **Chỉ làm nếu lấy được bản xuất nhóm chat lớp L3A** (nguồn kiểm lại, không phải nguồn chính — `evidence/hypothesis.md`). Không lấy được thì **xoá file này** trước CP3.
+
+- Data dùng: bản xuất tin nhắn nhóm chat lớp L3A từ 25/11/2026 00:00 đến 27/11/2026 23:59, **đã thay tên người gửi bằng mã U1, U2…** trước khi đọc (bản gốc không commit).
+- Đếm gì: số tin nhắn **hỏi** về luật / hạn / format nộp bài hackathon · trên tập nào: mọi tin nhắn có dấu "?" hoặc bắt đầu bằng "cho mình hỏi / ai biết / có được / phải … không" · lọc gì: bỏ tin của BTC / lab coach, bỏ tin hỏi về nội dung bài học (không phải luật nộp).
+- **Mẫu số là gì:** tổng số tin nhắn *hỏi* (mọi chủ đề) trong cùng khoảng thời gian, cùng bộ lọc người gửi. Đếm thêm: số người hỏi khác nhau / số người từng nhắn trong nhóm.
+- Script / công thức: gắn nhãn tay trên Google Sheets (cột `la_cau_hoi` 1/0, `ve_luat_nop` 1/0) → `=COUNTIFS(la_cau_hoi,1,ve_luat_nop,1) / COUNTIF(la_cau_hoi,1)`. Người thứ hai gắn nhãn lại 20 dòng ngẫu nhiên để kiểm.
 
 ## 2. Đọc trước, đếm sau
 

@@ -8,7 +8,7 @@
 | 1 | Người dùng & pain | Ai · việc gì · chỗ đau + số và trích dẫn | `evidence/summary.md` | ☐ |
 | 2 | Vì sao chọn bài này | Bảng impact rút gọn + hướng bị loại | `spec.md` §2 | ☐ |
 | 3 | Giải pháp | Lát cắt một câu · sơ đồ · AI tự làm đến đâu, vì sao | `spec.md` §4 | ☐ |
-| 4 | Demo live | 1 trường hợp thường + 1 trường hợp khó (lấy từ bộ câu thử); mạng hỏng → video dự phòng | `eval/benchmark.csv` | ☐ |
+| 4 | Demo live | Thường: B03 "Sau CP2 còn được sửa metric_spec.yaml không?" → trả lời + [AGENTS-11] · Khó: B09 "Hạn nộp là khi nào?" (hỏi lại / liệt kê mốc) và B16 (tấn công giả danh BTC); mạng hỏng → video dự phòng | `eval/benchmark.csv` | ☐ |
 | 5 | **Đánh giá thế nào** | Dataset · bộ câu thử · metric · lượt 1 → lượt 2 so với chuẩn "đạt" (kèm run ID) · lỗi chính | `eval/README.md`, `eval/report.md` | ☐ |
 | 6 | **Chi phí khi dùng thật** | Chi phí / task thành công · 3 kịch bản · so với impact | `cost/cost-estimate.md` | ☐ |
 | 7 | Kết luận | Go / iterate / stop — dẫn số ở trang 1, 5, 6 | — | ☐ |
@@ -20,4 +20,9 @@ Ai nói trang nào (mỗi người ≥1 phần):
 
 | Trang | Người nói |
 |---|---|
-| | |
+| 1 Người dùng & pain | Lê Quang Huy |
+| 2 Vì sao chọn bài này | Dương Văn Công |
+| 3 Giải pháp · 4 Demo live | Nguyễn Khôi Nguyên |
+| 5 Đánh giá thế nào | Nguyễn Hải Anh |
+| 6 Chi phí khi dùng thật | Dương Văn Công |
+| 7 Kết luận · 8 Nếu có thêm 1 tuần | Dương Văn Công · Lê Quang Huy |

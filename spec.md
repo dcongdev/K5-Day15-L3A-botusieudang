@@ -19,19 +19,19 @@ Data BTC cấp đã dùng: không dùng data BTC cấp. Kho tra cứu là các f
 - Việc họ cố làm xong: *kiểm một luật nộp bài trước khi commit / nộp checkpoint đúng hạn*.
 - Hôm nay họ giải bằng: lục nhiều file (README, guide, rubric, AGENTS, docs) hoặc hỏi nhóm chat lớp rồi chờ. Hỏng ở: luật nằm rải nhiều file, nhiều mốc giờ, có luật chỉ nằm trong code khung (vd cần ≥5 câu `kho` chỉ có trong `eval/run_eval.py`). Chưa bỏ vì: không có chỗ nào gom luật lại và trả lời có nguồn.
 - Pain: người giữ repo — đang chuẩn bị nộp checkpoint — không chắc luật vì luật rải ở nhiều file và tin nhắn — mất thời gian lục / chờ, có lúc làm sai luật (sửa file bị cấm, nộp sai format) → cả nhóm mất điểm một khối (vd sửa metric sau CP2 → R4 = 0).
-- Bằng chứng (chi tiết `evidence/summary.md`): khảo sát n = ____ · ____/____ (__%) đã phải tra / hỏi lại ≥1 luật trong 1 tuần qua · trung vị thời gian lần gần nhất ____ phút · phỏng vấn ____/3 người giữ repo kể được một lần cụ thể. **Kết luận: ____** *(Lê Quang Huy điền sau khi chốt khảo sát)*.
+- Bằng chứng (chi tiết `evidence/summary.md`) — **số tạm 18:33 Thứ Sáu 27/11, khảo sát n = 9, form còn mở**: 7/9 đã phải tra / hỏi lại ≥1 luật trong 1 tuần qua · trung vị lần gần nhất ≈ 10 phút · 7/7 phải mở ≥2 file hoặc hỏi ≥2 người · 3/9 "đoán rồi làm" · 3/9 từng nộp sai / sửa nhầm (vd "nộp nhầm link trên LMS", phiếu #8) · phỏng vấn: ____/3. **Kết luận tạm: giả thuyết đúng, chờ đủ n ≥ 20.** Lưu ý: thành viên thường cũng gặp (5/5) chứ không chỉ người giữ repo (2/4).
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
 | Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
 |---|---|---|---|---|---|---|
-| **A. Trợ lý tra luật nộp bài có trích nguồn** | ~175 người giữ repo *(tự ước tính: >700 học viên L3 ÷ nhóm 3–5 người)* | 6 *(tự ước tính, thay bằng câu 7 khảo sát × 4)* | 10 phút *(tự ước tính, thay bằng trung vị câu 5)* + rủi ro mất điểm một khối | ≈ 10.500 phút ≈ 175 giờ | Kịp: 1 công cụ tra + 1 lần gọi model | **Chọn** |
+| **A. Trợ lý tra luật nộp bài có trích nguồn** | ~175 người giữ repo *(tự ước tính: >700 học viên L3 ÷ nhóm 3–5 người)* | 20 *(khảo sát câu 7: trung vị 5 lần / tuần × 4, n = 8 — số tạm)* | 10 phút *(khảo sát câu 5: trung vị, n = 6 — số tạm)* + rủi ro mất điểm một khối (3/9 từng nộp sai) | ≈ 35.000 phút ≈ 580 giờ | Kịp: 1 công cụ tra + 1 lần gọi model | **Chọn** |
 | B. Kiểm repo trước khi nộp (thiếu file, còn `____`, lỡ commit `.env`) | như A | 1 lần / checkpoint × 4 | 5 phút *(tự ước tính)* | ≈ 3.500 phút | Kịp, nhưng phần lớn là luật cứng — `run.py check` đã làm một phần, AI không phải quyết định trung tâm | Loại |
 | C. Tóm tắt tin nhắn nhóm chat lớp thành "luật mới / thông báo mới" | toàn lớp | ____ | ____ | ____ | Không kịp: cần quyền đọc nhóm chat + ẩn danh dữ liệu cá nhân | Loại |
 
-- **Impact / tháng** của hướng chọn = 175 người × 6 lần × 10 phút = 10.500 phút — nguồn: số học viên L3 "hơn 700" theo README hackathon (repo đề, **cần kiểm lại**); số người giữ repo, số lần, số phút đều *(tự ước tính)* → thay bằng khảo sát câu 1, 5, 7 khi có.
+- **Impact / tháng** của hướng chọn = 175 người × 20 lần × 10 phút = 35.000 phút — nguồn: số người = học viên L3 "hơn 700" theo README hackathon (repo đề, **cần kiểm lại**) ÷ 4 *(tự ước tính)*; số lần = khảo sát câu 7 (trung vị 5 / tuần, n = 8); số phút = khảo sát câu 5 (trung vị ≈10, n = 6). **Số tạm từ 9 phiếu — cập nhật khi đủ n ≥ 20.** Nếu tính cả thành viên thường (khảo sát: 5/5 cũng gặp) thì số người lớn hơn nhiều.
 - Hướng ĐÃ LOẠI: **B** — giá trị thật nhưng không cần AI quyết định (luật cứng làm bằng code là đủ), trùng một phần với `run.py check`. **C** — đụng dữ liệu cá nhân trong nhóm chat, không làm kịp trong hackathon. Giả thuyết sai (khảo sát < 40% từng phải tra) thì đổi sang B (xem `evidence/hypothesis.md`).
-- Số lần / tháng của từng kiểu người dùng (persona ở §8): ít tra 4 · vừa 8 · nhiều 20 *(tự ước tính — thay bằng phân bố câu 7 khảo sát)*.
+- Số lần / tháng của từng kiểu người dùng (persona ở §8), từ khảo sát câu 7 (n = 8, số tạm): ít tra (≤1 lần / tuần, 1/8) ~4 · vừa (2–4 lần / tuần, 3/8) ~12 · nhiều (≥5 lần / tuần, 4/8) ~51.
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
 - **NotebookLM (hỏi đáp trên tài liệu tự tải lên):** đáng học — mỗi ý có trích dẫn bấm vào được · đáng né — người dùng phải tự gom và tải tài liệu, nguồn là "đoạn tự động" khó dẫn lại cho bạn cùng nhóm · mình khác — kho luật đã gom sẵn, mã đoạn cố định (vd `[AGENTS-11]`) + số dòng, ai mở file cũng ra cùng chỗ.
@@ -108,7 +108,7 @@ flowchart LR
 - Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-____.csv` (50 phiên)
 - Chi phí / task thành công: ____ (model gpt-5.4-nano) · ____ (model gemini-3.1-flash-lite) · ____ (model gpt-5.4-mini)
 - Chi phí / tháng ở quy mô thật: thấp ____ · cơ sở ____ · cao ____ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2: 6 lần × 10 phút = 60 phút / người giữ repo / tháng *(tự ước tính)*): ____
+- So với impact / người / tháng (§2: 20 lần × 10 phút = 200 phút / người / tháng, khảo sát n = 8–9, số tạm): ____
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: kho chỉ gồm file khung công khai; bot không nhận, không lưu tên / mã học viên. Câu hỏi của người dùng được gửi lên model — nhắc người dùng không dán key, mã học viên vào câu hỏi. Khảo sát: không thu tên / email / mã học viên, chỉ commit bản đã xoá cột nhận ra người. Không đưa dữ liệu cá nhân vào model gói miễn phí.
@@ -124,7 +124,9 @@ flowchart LR
 
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
-|  |  |  |
+| 18:55 Thứ Sáu 27/11 (trước lượt 1) | Thêm 6 câu thử `nguoi_dung` B21–B26, lấy nguyên văn câu 3 khảo sát (phiếu #1, 2, 3, 5, 6, 8) | Cần ≥1/3 câu từ người dùng; câu thật mơ hồ hơn câu nhóm tự viết (vd "format đúng cho các file") |
+| 18:55 Thứ Sáu 27/11 (trước lượt 1) | `codebase/tools.py`: thêm từ đồng nghĩa chung (checkpoint ↔ CP, submit ↔ nộp, rubric ↔ chấm điểm), bỏ "cần, làm, yêu, về" khỏi chỉ mục; khoá cách đánh mã đoạn theo bản CP2 (365 mã không đổi) | Khảo sát cho thấy người dùng gõ "checkpoint 2", "Submit", "RUBRIC" — bản CP2 không hiểu "checkpoint 2" = CP2 (tra ra đoạn không liên quan) |
+| 18:55 Thứ Sáu 27/11 | Thay số *(tự ước tính)* ở §1, §2, §8 và `cost/personas.yaml` bằng số khảo sát tạm (n = 9) | Có số thật đầu tiên; cập nhật lại khi đủ n ≥ 20 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

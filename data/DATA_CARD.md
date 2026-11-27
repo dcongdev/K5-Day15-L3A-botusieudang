@@ -20,9 +20,9 @@
 | | |
 |---|---|
 | Dùng để làm gì | Chạy `python run.py eval`, chấm theo `eval/metric_spec.yaml` |
-| Từ đâu | 20 câu `tu_viet` (B01–B20) nhóm viết từ Dataset 1 (4 câu B08, B15, B19, B20 lấy ý từ bản nháp nhánh `nguyenah`), mỗi câu ghi file căn cứ ở cột `source` · ~10 câu `nguoi_dung` (B21–B30) lấy **nguyên văn** câu 3 của khảo sát (`evidence/survey/results.csv`, `source = nguoi_dung: khảo sát phiếu #N`) — thêm trước lượt 1 |
+| Từ đâu | 20 câu `tu_viet` (B01–B20) nhóm viết từ Dataset 1 (4 câu B08, B15, B19, B20 lấy ý từ bản nháp nhánh `nguyenah`), mỗi câu ghi file căn cứ ở cột `source` · ~10 câu `nguoi_dung` (B21–B30, đã có B21–B26) lấy **nguyên văn** câu 3 của khảo sát (`evidence/survey/results.csv`, `source = nguoi_dung: khảo sát phiếu #N`) — thêm trước lượt 1 |
 | Xử lý những bước gì | Câu khảo sát: bỏ tên người / tên nhóm nếu có, giữ nguyên cách hỏi (cả không dấu, viết tắt); `expected` viết từ đoạn trong Dataset 1, không nhìn output của bot |
-| Số dòng | CP2: 20 (thuong 8 · kho 7 · tu_choi 5) · CP3: 20–30 |
+| Số dòng | CP2: 20 (thuong 8 · kho 7 · tu_choi 5) · 27/11 18:55: 26 (thêm B21–B26 `nguoi_dung` từ khảo sát phiếu #1, 2, 3, 5, 6, 8) · CP3: 30 (thêm ≥4 câu `nguoi_dung` nữa) |
 | Phiên bản / ngày lấy | 27/11/2026 |
 | Nhãn | `tu_viet` · `nguoi_dung` |
 | Giới hạn | Câu `tu_viet` do người viết spec đặt → dễ "khớp" cách tra hơn câu thật; vì vậy cần ≥1/3 câu từ người dùng. Chưa có câu hỏi nhiều lượt |

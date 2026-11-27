@@ -101,6 +101,9 @@ def count(rows):
     gap = [r for r in rows if norm(r["q2"]) in TRONG_TUAN]
     out["gap"] = len(gap)
     print("Câu 2 — đã phải tra / hỏi lại ≥1 luật trong 1 tuần qua: %s" % pct(len(gap), n))
+    for role in sorted(roles, key=lambda k: -roles[k]):  # đếm theo từng vai, không cộng chung (evidence/summary.md)
+        rr = [r for r in rows if (r["q1"].strip() or "(trống)") == role]
+        print("        %-16s %s" % (role + ":", pct(sum(1 for r in rr if norm(r["q2"]) in TRONG_TUAN), len(rr))))
 
     mins = [PHUT[norm(r["q5"])] for r in gap if norm(r["q5"]) in PHUT]
     dist = {}
@@ -138,6 +141,10 @@ def count(rows):
         print("Câu 7 — số lần / tuần: trung vị %s · TB %.1f · ≤1 lần: %d · 2–4: %d · ≥5: %d (n=%d) → share persona: %.2f / %.2f / %.2f"
               % (statistics.median(week), statistics.mean(week), it, vua, nhieu, len(week),
                  it / len(week), vua / len(week), nhieu / len(week)))
+        for name, grp in (("tra_vua (2–4 lần/tuần)", [w for w in week if 1 < w <= 4]),
+                          ("tra_nhieu (≥5 lần/tuần)", [w for w in week if w > 4])):
+            if grp:
+                print("        %s: TB %.1f lần/tuần → uses_per_month ≈ %d" % (name, statistics.mean(grp), round(4 * statistics.mean(grp))))
 
     sai = [(i, r["q8"].strip()) for i, r in enumerate(rows, start=1) if r["q8"].strip().lower().startswith("có")]
     print("Câu 8 — từng nộp sai / sửa nhầm vì hiểu sai luật: %s" % pct(len(sai), n))

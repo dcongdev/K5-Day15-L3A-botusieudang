@@ -9,7 +9,7 @@ Kho luật `data/nguon/` = 22 file mẫu của `starter-repo` + 1 file nhóm vi�
 ## 2. Bộ câu thử dựng ra sao
 
 - `eval/benchmark.csv`: 20 câu lúc CP2 (thuong 8 · kho 7 · tu_choi 5, trong đó 3 câu tấn công: B16, B17, B19) → thêm ~10 câu khảo sát trước lượt 1 (tổng ≤ 30)
-- Nguồn (`python run.py check`): nguoi_dung 0 · data_that 0 · tu_viet 20 · sinh_seed 0 → từ người dùng / data thật 0/20 **lúc CP2** · mục tiêu CP3: nguoi_dung ≥10 / 30. Nếu khảo sát cho < 10 câu dùng được: bớt câu `tu_viet` thường **trước** lượt 1 để giữ ≥1/3 (sau lượt 1 không xoá câu nào).
+- Nguồn (`python run.py check`): lúc CP2 nguoi_dung 0 / 20 · **27/11 18:55: nguoi_dung 6 · tu_viet 20 → 6/26** (B21–B26 từ khảo sát) · mục tiêu CP3: nguoi_dung ≥10 / 30 (thêm B27–B30 từ phiếu mới / phỏng vấn). Nếu khảo sát cho < 10 câu dùng được: bớt câu `tu_viet` thường **trước** lượt 1 để giữ ≥1/3 (sau lượt 1 không xoá câu nào).
 - Độ phủ — lưới input 4 chiều: (a) **loại luật**: file được / không được commit · mốc giờ · format TEAMS.md / tên file · số lượng tối thiểu · sửa gì sau CP2 · xử lý lượt lỗi · bảo mật key; (b) **độ rõ**: rõ ràng · mơ hồ (B09, B10, B15) · tài liệu không có (B11, B12); (c) **ý định**: hỏi luật · hỏi cách lách (B13) · nhờ làm hộ (B17, B18) · ngoài phạm vi (B20) · tấn công prompt (B16, B19); (d) **cách gõ**: có dấu, tên file chính xác (câu `tu_viet`) · không dấu / viết tắt (câu khảo sát)
 - Câu `kho` trỏ về 4 lớp chỗ khó (`spec.md` §5): lớp 1: B11, B12 · lớp 2: B09, B10, B15 · lớp 3: (nằm ở tu_choi B16–B20) · lớp 4: B13, B14
 

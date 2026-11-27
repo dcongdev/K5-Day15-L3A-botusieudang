@@ -1,6 +1,6 @@
 # Khảo sát — tra luật nộp bài hackathon
 
-- Người phụ trách: Lê Quang Huy · Kênh gửi: nhóm chat lớp L3A (+ nhờ lab coach chuyển) · Mở: __ · Chốt: __
+- Người phụ trách: Lê Quang Huy · Kênh gửi: nhóm chat lớp L3A (+ nhờ lab coach chuyển) · Mở: ~18:00 Thứ Sáu 27/11/2026 (phiếu đầu 18:05) · Chốt: sáng Thứ Bảy 28/11 trước CP3 (khi đủ ≥20)
 - Đối tượng: học viên L3A **ngoài nhóm botusieudang**. Mục tiêu n ≥ 20.
 - Không thu tên, email, mã học viên (trừ câu 9 nếu người trả lời tự để lại).
 - Kết quả: xuất CSV, **xoá cột thời gian + mọi cột nhận ra người (cả câu 9)**, đổi tiêu đề thành `q1,…,q8`, lưu `evidence/survey/results.csv` → chạy `python evidence/survey/count_survey.py` (in số chính + ghi `benchmark-candidates.csv` từ câu 3). Bản gốc đặt tên `raw-*.csv` (đã `.gitignore`, không commit).

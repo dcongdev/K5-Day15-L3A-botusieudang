@@ -11,9 +11,9 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò | Phần việc chính |
 |---|---|---|---|---|
-| 1 | Dương Văn Công | 2A202603468 | Đội trưởng | Điều phối, bản chạy thử (codebase/), nối model, chạy eval |
-| 2 | Lê Quang Huy | 2A202603470 | Thành viên | Bằng chứng pain: phỏng vấn, khảo sát (evidence/) |
-| 3 | Nguyễn Khôi Nguyên| 2A202603453 | Thành viên | Impact và quyết định chọn (spec.md §2), chi phí (cost/), slide |
+| 1 | Dương Văn Công | 2A202603468 | Đội trưởng | Impact và quyết định chọn (spec.md §2), chi phí (cost/), slide |
+| 2 | Nguyễn Khôi Nguyên | 2A202603453 | Thành viên | Điều phối, bản chạy thử (codebase/), nối model, chạy eval |
+| 3 | Lê Quang Huy | 2A202603470 | Thành viên | Bằng chứng pain: phỏng vấn, khảo sát (evidence/) |
 | 4 | Nguyễn Hải Anh | 2A202603484 | Thành viên | Bộ câu thử, metric, chấm pass, data card (eval/, data/) |
 
 **Quy tắc điền**

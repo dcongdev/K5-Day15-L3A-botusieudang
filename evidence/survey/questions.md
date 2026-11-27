@@ -3,7 +3,8 @@
 - Người phụ trách: Lê Quang Huy · Kênh gửi: nhóm chat lớp L3A (+ nhờ lab coach chuyển) · Mở: __ · Chốt: __
 - Đối tượng: học viên L3A **ngoài nhóm botusieudang**. Mục tiêu n ≥ 20.
 - Không thu tên, email, mã học viên (trừ câu 9 nếu người trả lời tự để lại).
-- Kết quả: xuất CSV, **xoá cột thời gian + mọi cột nhận ra người**, lưu `evidence/survey/results.csv`.
+- Kết quả: xuất CSV, **xoá cột thời gian + mọi cột nhận ra người (cả câu 9)**, đổi tiêu đề thành `q1,…,q8`, lưu `evidence/survey/results.csv` → chạy `python evidence/survey/count_survey.py` (in số chính + ghi `benchmark-candidates.csv` từ câu 3). Bản gốc đặt tên `raw-*.csv` (đã `.gitignore`, không commit).
+- Câu trả lời cho câu 4, 5 trên Google Form phải gõ **đúng chữ** như bảng dưới (script so khớp chữ).
 
 **Lời mở form:** "Nhóm mình đang tìm hiểu cách các bạn tra luật nộp bài hackathon (file nào commit, hạn từng mốc, format…). 2 phút, 9 câu, không giới thiệu sản phẩm, không thu tên."
 

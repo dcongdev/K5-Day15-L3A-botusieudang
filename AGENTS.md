@@ -1,6 +1,5 @@
 # AGENTS.md — hướng dẫn cho coding agent (Claude Code, Cursor, Codex…) làm việc trong repo này
 
-> Ôn lại: ngày 12 · lab ngày 12. Nhóm sửa file này cho khớp bài của mình (thêm quy ước riêng, bỏ dòng không dùng).
 
 ## Repo này là gì
 
@@ -40,6 +39,8 @@ Khung chỉ dùng thư viện chuẩn của Python. Thêm thư viện thì ghi v
 
 ## Quy ước của nhóm
 
-- Ngôn ngữ trả lời người dùng: __
-- Phong cách code / đặt tên: __
-- Ai duyệt thay đổi do agent tạo trước khi commit: __
+- Ngôn ngữ trả lời người dùng: tiếng Việt; mọi khẳng định kèm mã đoạn `[TÊNFILE-NN]` + file + dòng.
+- Phong cách code / đặt tên: chỉ thư viện chuẩn Python; tên hàm / biến tiếng Việt không dấu khi là khái niệm của bài (`kiem_nguon`, `tra_loi`), tiếng Anh khi là kỹ thuật (`load_corpus`, `bm25`).
+- Không sửa file trong `data/nguon/` sau CP2 (mã đoạn sẽ đổi, `expected` và lượt cũ không còn khớp) — muốn thêm luật thì thêm file mới.
+- Không chép nguyên văn input của `eval/benchmark.csv` vào `SYN`, `SYSTEM` hay bất kỳ chỗ nào trong `codebase/`.
+- Ai duyệt thay đổi do agent tạo trước khi commit: Nguyễn Khôi Nguyên (`codebase/`), Nguyễn Hải Anh (`eval/`, `data/`), Lê Quang Huy (`evidence/`), Dương Văn Công (`cost/`, `slides/`, đội trưởng duyệt cuối).

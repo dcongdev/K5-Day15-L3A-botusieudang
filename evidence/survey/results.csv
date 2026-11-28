@@ -8,3 +8,21 @@ Thành viên khác,Hôm qua,Đọc luật bài lab và xem xem các file cần S
 Thành viên khác,Hôm nay,,đoán rồi làm,Dưới 2',2,20,Không
 Đội trưởng,Hôm nay,Yêu cầu về checkpoint 2 cần làm gì?,"lục README / guide / rubric, hỏi bạn cùng nhóm",15–30',3,15,Có: nộp nhầm link trên LMS.
 Thành viên khác,2–7 ngày trước,không,"hỏi nhóm chat lớp, hỏi ChatGPT / AI khác, đoán rồi làm",5–15',4+,0,không
+Thành viên khác,Hôm nay,,"lục README / guide / rubric, hỏi bạn cùng nhóm, hỏi ChatGPT / AI khác",2–5',2,7,Không
+Thành viên khác,Hôm qua,,"lục README / guide / rubric, hỏi ChatGPT / AI khác",2–5',1,3,không
+Thành viên khác,Hôm qua,có được sửa gì sau CP2,hỏi lab coach / TA,5–15',1,1,không-vì tìm hiểu kĩ về luật rồi mới nộp
+Đội trưởng,Hôm nay,File nào cần commit lên GitHub và có cần nộp cả file báo cáo không?,"lục README / guide / rubric, hỏi bạn cùng nhóm",5–15',3,4,Có — Nhóm từng thiếu một file cấu hình khi push repo.
+Thành viên khác,Hôm qua,TEAMS.md cần có những nội dung gì và format trình bày như thế nào?,"hỏi nhóm chat lớp, hỏi ChatGPT / AI khác",5–15',2,2,Không
+Người giữ repo,2–7 ngày trước,Sau CP2 có được sửa code và commit bổ sung không?,lục README / guide / rubric,Dưới 2',1,3,Có — Từng sửa code sau mốc quy định mà không chắc có được phép không.
+Thành viên khác,Hôm nay,Deadline chính xác của từng checkpoint là khi nào?,"hỏi nhóm chat lớp, hỏi bạn cùng nhóm",2–5',2,5,Không
+Đội trưởng,2–7 ngày trước,Có cần commit trực tiếp lên branch main hay được tạo branch riêng?,"lục README / guide / rubric, hỏi lab coach / TA",15–30',4+,3,Có — Nhóm từng push nhầm branch nên phải sửa lại.
+Thành viên khác,Lâu hơn,File submission cần định dạng PDF hay có thể nộp DOCX?,hỏi bạn cùng nhóm,Dưới 2',1,1,Không
+Người giữ repo,Hôm qua,Có bắt buộc phải có commit history của tất cả thành viên không?,"lục README / guide / rubric, hỏi ChatGPT / AI khác",5–15',3,4,Có — Nhóm từng quên commit bằng tài khoản cá nhân của một thành viên.
+Thành viên khác,2–7 ngày trước,README có cần hướng dẫn cách chạy project chi tiết không?,hỏi nhóm chat lớp,2–5',2,2,Không
+Đội trưởng,Hôm nay,Nếu nộp nhầm file thì có được upload lại trước deadline không?,"lục README / guide / rubric, hỏi lab coach / TA",Trên 30',4+,5,Có — Nhóm từng nộp nhầm phiên bản báo cáo.
+Thành viên khác,Hôm qua,Tên file và cấu trúc thư mục khi nộp bài có quy định cụ thể không?,"lục README / guide / rubric, hỏi ChatGPT / AI khác",5–15',3,3,Không
+Người giữ repo,2–7 ngày trước,"Những file nào không được commit lên repo, ví dụ .env hoặc dataset?","lục README / guide / rubric, đoán rồi làm",2–5',2,2,Có — Từng commit cả file dữ liệu dung lượng lớn lên GitHub.
+Thành viên khác,Lâu hơn,Có bắt buộc phải hoàn thành tất cả checkpoint mới được tham gia vòng tiếp theo không?,"hỏi nhóm chat lớp, hỏi bạn cùng nhóm",2–5',2,1,Không
+Đội trưởng,Hôm qua,Rubric chấm điểm có yêu cầu cụ thể về số lượng commit và tài liệu không?,"lục README / guide / rubric, hỏi lab coach / TA, hỏi ChatGPT / AI khác",15–30',4+,4,Có — Nhóm từng thiếu tài liệu mô tả quy trình triển khai.
+Người giữ repo,Hôm nay,Sau khi submit có được tiếp tục cập nhật repository không?,"hỏi nhóm chat lớp, hỏi bạn cùng nhóm",5–15',2,3,Không
+Thành viên khác,2–7 ngày trước,Có cần ghi rõ vai trò và đóng góp của từng thành viên trong TEAMS.md không?,"lục README / guide / rubric, hỏi ChatGPT / AI khác",5–15',3,2,Có — Nhóm từng ghi thiếu thông tin đóng góp của thành viên.

@@ -6,3 +6,19 @@
 5,Tạo sao nộp đúng theo RUBRIC nhưng vẫn ko được điểm,,,thuong,nguoi_dung: khảo sát phiếu #5
 6,Đọc luật bài lab và xem xem các file cần Submit là những gì?,,,thuong,nguoi_dung: khảo sát phiếu #6
 8,Yêu cầu về checkpoint 2 cần làm gì?,,,thuong,nguoi_dung: khảo sát phiếu #8
+12,có được sửa gì sau CP2,,,thuong,nguoi_dung: khảo sát phiếu #12
+13,File nào cần commit lên GitHub và có cần nộp cả file báo cáo không?,,,thuong,nguoi_dung: khảo sát phiếu #13
+14,TEAMS.md cần có những nội dung gì và format trình bày như thế nào?,,,thuong,nguoi_dung: khảo sát phiếu #14
+15,Sau CP2 có được sửa code và commit bổ sung không?,,,thuong,nguoi_dung: khảo sát phiếu #15
+16,Deadline chính xác của từng checkpoint là khi nào?,,,thuong,nguoi_dung: khảo sát phiếu #16
+17,Có cần commit trực tiếp lên branch main hay được tạo branch riêng?,,,thuong,nguoi_dung: khảo sát phiếu #17
+18,File submission cần định dạng PDF hay có thể nộp DOCX?,,,thuong,nguoi_dung: khảo sát phiếu #18
+19,Có bắt buộc phải có commit history của tất cả thành viên không?,,,thuong,nguoi_dung: khảo sát phiếu #19
+20,README có cần hướng dẫn cách chạy project chi tiết không?,,,thuong,nguoi_dung: khảo sát phiếu #20
+21,Nếu nộp nhầm file thì có được upload lại trước deadline không?,,,thuong,nguoi_dung: khảo sát phiếu #21
+22,Tên file và cấu trúc thư mục khi nộp bài có quy định cụ thể không?,,,thuong,nguoi_dung: khảo sát phiếu #22
+23,"Những file nào không được commit lên repo, ví dụ .env hoặc dataset?",,,thuong,nguoi_dung: khảo sát phiếu #23
+24,Có bắt buộc phải hoàn thành tất cả checkpoint mới được tham gia vòng tiếp theo không?,,,thuong,nguoi_dung: khảo sát phiếu #24
+25,Rubric chấm điểm có yêu cầu cụ thể về số lượng commit và tài liệu không?,,,thuong,nguoi_dung: khảo sát phiếu #25
+26,Sau khi submit có được tiếp tục cập nhật repository không?,,,thuong,nguoi_dung: khảo sát phiếu #26
+27,Có cần ghi rõ vai trò và đóng góp của từng thành viên trong TEAMS.md không?,,,thuong,nguoi_dung: khảo sát phiếu #27

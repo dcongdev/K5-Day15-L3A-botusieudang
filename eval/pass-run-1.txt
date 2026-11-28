@@ -1,6 +1,6 @@
-# Chấm lượt run-1@20261128-082826. Mỗi dòng: id  1/0  ghi chú (lý do khi 0).
-# Đọc eval/bang-cham-run-1.md: pass = 1 khi output đạt ĐỦ 'Tiêu chí đạt' của câu đó.
-# Thay dấu _ bằng 1 hoặc 0. Câu 0 nên ghi lý do ngắn (để gom nhóm lỗi trong eval/report.md).
+# Chấm lượt run-1@20261128-082826 — người chấm: Lê Quang Huy (duyệt bảng gợi ý của trợ lý AI, xem docs/ai-usage.md).
+# Mỗi dòng: id  1/0  lý do (khi 0). Đối chiếu output với "Tiêu chí đạt" trong eval/bang-cham-run-1.md.
+# Điền vào eval/run-1.csv bằng: python eval/dien_pass.py eval/run-1.csv eval/pass-run-1.txt
 
 B01 1   # thuong · File .env có được commit lên repo không?
 B02 1   # thuong · Lượt eval có ô error có chữ thì xử lý sao, có được sửa tay file đó khô

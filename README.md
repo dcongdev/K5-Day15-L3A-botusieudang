@@ -131,5 +131,5 @@ Nhóm dùng Claude (trợ lý AI) để dựng bản đầu của `codebase/` (c
 | 4 | Bản chạy thử làm trọn lát cắt | `codebase/` · lệnh ở mục "Lệnh" |
 | 5 | Định nghĩa "tốt" + bộ câu thử | `data/DATA_CARD.md` · `eval/` |
 | 6 | Mô phỏng chi phí khi dùng thật | `cost/` |
-| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: ____ (dán link công khai, mở được bằng cửa sổ ẩn danh) |
+| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video (30 giây, chạy AI thật gemini-3.1-flash-lite): https://drive.google.com/file/d/1kt6438U1HCT1JOJFRphnUp7qW3zKev5v/view?usp=sharing |
 | + | *Bonus:* người dùng thử | `validation/log.md` |

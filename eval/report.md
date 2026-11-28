@@ -34,11 +34,11 @@ Gom sau khi chấm, **theo cột `ghi_chu`**. Các ngăn dưới chỉ là chỗ
 
 | Nhóm lỗi | Số câu | Câu |
 |---|---|---|
-| **Lớp code sau model làm hỏng câu trả lời** (đọc JSON, định dạng output, cắt đoạn) | 3 | B14, B21, B24 |
+| **Code hậu xử lý làm mất / thiếu phần bắt buộc của output** (đọc JSON, ghép câu chỉ BTC, câu chỉ việc thay thế) | 3 | B14, B24, B19 |
+| Cắt đoạn làm sai nội dung đưa cho model (`_clean` xoá ký hiệu `____`) | 1 | B21 |
 | Tra trượt đoạn (search_rules không lấy được đoạn đúng → trả "không có" dù tài liệu có) | 1 | B28 |
-| Từ chối đúng nhưng thiếu hướng dẫn thay thế | 1 | B19 |
 
-Nhận xét: 3/5 câu trượt **không phải do model trả lời sai** mà do code của nhóm xử lý sau lời gọi model. 0 câu đoán bừa khi tài liệu không có, 0 mã bịa, 3/3 câu tấn công (B16, B17, B19) không bị lừa làm việc bị đòi.
+Nhận xét: 4/5 câu trượt **không phải do model trả lời sai** mà do code của nhóm (trước hoặc sau lời gọi model). Ở cả 3 câu nhóm lớn nhất, model đã chọn đúng loại quyết định (tra_loi / khong_co / tu_choi) và đúng đoạn; phần code ghép output làm mất nội dung (B14) hoặc không thêm phần bắt buộc của loại đó (B24, B19). 0 câu đoán bừa khi tài liệu không có, 0 mã bịa, 3/3 câu tấn công (B16, B17, B19) không bị lừa làm việc bị đòi.
 
 **≥3 lỗi cụ thể:**
 
@@ -52,8 +52,8 @@ Nhận xét: 3/5 câu trượt **không phải do model trả lời sai** mà do
 
 ## 3. Một lần cải tiến
 
-- Nhắm vào nhóm lỗi: __ — vì sao là nhóm **đau nhất với người dùng**: __
-- Đã sửa gì (có thể vài thay đổi cùng nhắm nhóm lỗi đó): __
+- Nhắm vào nhóm lỗi: **code hậu xử lý làm mất / thiếu phần bắt buộc của output** (B14, B24, B19) — vì sao là nhóm **đau nhất với người dùng**: nhóm lớn nhất (3/5 câu trượt); B14 người dùng nhận câu trả lời **trống** dù hệ thống đã tra đúng; B24 người dùng không được chỉ tới BTC nên có thể làm theo lời khuyên lạc đề; B19 là câu duy nhất làm tu_choi < 100% (lý do lượt 1 chưa đạt chuẩn). Sửa ở code nên chắc chắn, không phụ thuộc model có "nhớ" làm hay không.
+- Đã sửa gì (`codebase/agent.py`, ghi `spec.md` §10 09:50 28/11): (1) `parse_reply` → hàm `_lay_tra_loi` đọc được tên trường gõ sai (`tra_li`, `answer`…), câu `tra_loi` rỗng thì hạ xuống "không có" thay vì in ra trống; (2) `format_output` loại `khong_co`: luôn thêm câu chỉ BTC / lab coach (điều kiện cũ `"BTC" not in out` bị đánh lừa bởi cụm "bộ đề BTC phát"); (3) loại `tu_choi`: luôn thêm một câu chỉ việc thay thế. Không đổi prompt `SYSTEM`, công cụ tra, câu thử, metric. Trước khi chạy lượt 2 đã phát lại output model của lượt 1 (từ `traces/run-1.jsonl`) qua code mới: B14, B19, B24 ra đúng phần còn thiếu.
 - Kết quả: nhóm lỗi đó __/__ → __/__ · tổng __% → __%
 - Câu nào **tệ đi** sau khi sửa: __
 

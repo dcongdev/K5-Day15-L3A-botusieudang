@@ -44,4 +44,4 @@ Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, k
 
 ## 6. Lỗi chính
 
-Lượt 1: 5 câu trượt. Nhóm lớn nhất (3 câu: B14, B21, B24) là **lớp code sau model làm hỏng câu trả lời** — đọc sai tên trường JSON, cắt đoạn mất ký hiệu `____`, bỏ mất câu chỉ BTC. Còn lại: tra trượt đoạn mốc giờ (B28) và từ chối thiếu hướng dẫn thay thế (B19). 0 mã bịa, 0 câu đoán bừa. Cải tiến trước lượt 2: ghi ở `eval/report.md` mục 3.
+Lượt 1: 5 câu trượt. Nhóm lớn nhất (3 câu: B14, B24, B19) là **code hậu xử lý làm mất / thiếu phần bắt buộc của output** — đọc sai tên trường JSON (trả lời rỗng), bỏ mất câu chỉ BTC, không thêm hướng dẫn thay thế khi từ chối. Còn lại: cắt đoạn mất ký hiệu `____` (B21) và tra trượt đoạn mốc giờ (B28). 0 mã bịa, 0 câu đoán bừa. Cải tiến trước lượt 2: ghi ở `eval/report.md` mục 3.

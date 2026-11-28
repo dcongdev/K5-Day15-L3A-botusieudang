@@ -129,6 +129,7 @@ flowchart LR
 | 18:55 Thứ Sáu 27/11 | Thay số *(tự ước tính)* ở §1, §2, §8 và `cost/personas.yaml` bằng số khảo sát tạm (n = 9) | Có số thật đầu tiên; cập nhật lại khi đủ n ≥ 20 |
 | 08:25 Thứ Bảy 28/11 (trước lượt 1) | Thêm 4 câu thử `nguoi_dung` B27–B30 (phiếu #12, 16, 23, 21) → 30 câu, 10/30 từ người dùng; cập nhật §0, §1, §2, §8 và `cost/personas.yaml` từ khảo sát n = 27 | Đủ ngưỡng ≥1/3 câu từ người dùng và khảo sát ≥20 cho CP3 |
 | 19:10 Thứ Sáu 27/11 (trước lượt 1) | Nối model thật gemini-3.1-flash-lite; `codebase/ai.py` tự thử lại tối đa 2 lần khi timeout / HTTP 429, 5xx, timeout 90 giây | `simulate --try`: 1/10 phiên lỗi `TimeoutError` (phiên S010) — lỗi mạng, không phải lỗi luồng |
+| 09:50 Thứ Bảy 28/11 (sau lượt 1, trước lượt 2) — **cải tiến duy nhất** | `codebase/agent.py`, chỉ phần code sau lời gọi model: (1) `parse_reply` đọc được tên trường gõ sai (`tra_li`, `answer`…) thay vì chỉ `tra_loi`; `tra_loi` rỗng → hạ xuống "không có"; (2) câu "không có" luôn kèm câu chỉ BTC / lab coach (trước đây bỏ nếu output có chữ "BTC"); (3) câu từ chối luôn kèm một câu chỉ việc thay thế (hằng `THAY_THE`). Không đổi prompt, công cụ tra, câu thử, metric | Nhóm lỗi "code hậu xử lý làm mất / thiếu phần bắt buộc của output" ở lượt 1: B14 (trả lời rỗng), B24 (thiếu chỉ BTC), B19 (thiếu hướng dẫn thay thế → tu_choi 4/5, chưa đạt chuẩn) — `eval/report.md` mục 2–3 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

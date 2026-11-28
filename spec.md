@@ -12,26 +12,26 @@ Data BTC cấp đã dùng: không dùng data BTC cấp. Kho tra cứu là các f
   2. Mở README của repo nhóm → nếu không thấy thì mở `02-guide.md`, `03-rubric.md` trong repo đề, `AGENTS.md`, `docs/`, comment đầu các file mẫu.
   3. Không tìm ra thì hỏi trên nhóm chat lớp L3A / nhắn lab coach rồi chờ.
   4. Hết giờ thì đoán rồi làm.
-- Công cụ / AI đang dùng: lệnh `python run.py check` của khung kiểm được một phần format (số câu thử, cột, TEAMS.md) nhưng **không trả lời câu hỏi** về luật. Khảo sát câu 4 (n = 9, số tạm): lục README / guide / rubric 6/9 · hỏi bạn cùng nhóm 4/9 · **hỏi ChatGPT / AI khác 3/9** (AI chung không có tài liệu của khoá) · đoán rồi làm 3/9 · hỏi nhóm chat lớp 2/9.
+- Công cụ / AI đang dùng: lệnh `python run.py check` của khung kiểm được một phần format (số câu thử, cột, TEAMS.md) nhưng **không trả lời câu hỏi** về luật. Khảo sát câu 4 (n = 27): lục README / guide / rubric 17/27 · hỏi bạn cùng nhóm 10/27 · **hỏi ChatGPT / AI khác 10/27** (AI chung không có tài liệu của khoá) · hỏi nhóm chat lớp 7/27 · đoán rồi làm 4/27 · hỏi lab coach / TA 4/27.
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
 - Người dùng chính: thành viên nhóm hackathon AI20K lớp L3A **đang phụ trách nộp một checkpoint** (đội trưởng hoặc người giữ repo), trong 24 giờ trước mốc nộp.
 - Việc họ cố làm xong: *kiểm một luật nộp bài trước khi commit / nộp checkpoint đúng hạn*.
 - Hôm nay họ giải bằng: lục nhiều file (README, guide, rubric, AGENTS, docs) hoặc hỏi nhóm chat lớp rồi chờ. Hỏng ở: luật nằm rải nhiều file, nhiều mốc giờ, có luật chỉ nằm trong code khung (vd cần ≥5 câu `kho` chỉ có trong `eval/run_eval.py`). Chưa bỏ vì: không có chỗ nào gom luật lại và trả lời có nguồn.
 - Pain: người giữ repo — đang chuẩn bị nộp checkpoint — không chắc luật vì luật rải ở nhiều file và tin nhắn — mất thời gian lục / chờ, có lúc làm sai luật (sửa file bị cấm, nộp sai format) → cả nhóm mất điểm một khối (vd sửa metric sau CP2 → R4 = 0).
-- Bằng chứng (chi tiết `evidence/summary.md`) — **số tạm 18:33 Thứ Sáu 27/11, khảo sát n = 9, form còn mở**: 7/9 đã phải tra / hỏi lại ≥1 luật trong 1 tuần qua · trung vị lần gần nhất ≈ 10 phút · 7/7 phải mở ≥2 file hoặc hỏi ≥2 người · 3/9 "đoán rồi làm" · 3/9 từng nộp sai / sửa nhầm (vd "nộp nhầm link trên LMS", phiếu #8) · phỏng vấn: ____/3. **Kết luận tạm: giả thuyết đúng, chờ đủ n ≥ 20.** Lưu ý: thành viên thường cũng gặp (5/5) chứ không chỉ người giữ repo (2/4).
+- Bằng chứng (chi tiết `evidence/summary.md`) — khảo sát **n = 27** (12 phiếu tối 27/11 + 15 phiếu sáng 28/11): **23/27 (85%)** đã phải tra / hỏi lại ≥1 luật trong 1 tuần qua · trung vị lần gần nhất ≈ **10 phút** · 20/23 phải mở ≥2 file hoặc hỏi ≥2 người · **11/27 từng nộp sai / sửa nhầm** (vd "nộp nhầm link trên LMS", phiếu #8) · phỏng vấn: chưa làm kịp trước CP3. **Kết luận: giả thuyết đúng.** Lưu ý: thành viên thường cũng gặp (13/15), không chỉ người giữ repo / đội trưởng (10/12).
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
 | Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
 |---|---|---|---|---|---|---|
-| **A. Trợ lý tra luật nộp bài có trích nguồn** | ~175 người giữ repo *(tự ước tính: >700 học viên L3 ÷ nhóm 3–5 người)* | 20 *(khảo sát câu 7: trung vị 5 lần / tuần × 4, n = 8 — số tạm)* | 10 phút *(khảo sát câu 5: trung vị, n = 6 — số tạm)* + rủi ro mất điểm một khối (3/9 từng nộp sai) | ≈ 35.000 phút ≈ 580 giờ | Kịp: 1 công cụ tra + 1 lần gọi model | **Chọn** |
+| **A. Trợ lý tra luật nộp bài có trích nguồn** | ~175 người giữ repo *(tự ước tính: >700 học viên L3 ÷ nhóm 3–5 người)* | 12 *(khảo sát câu 7: trung vị 3 lần / tuần × 4, n = 26)* | 10 phút *(khảo sát câu 5: trung vị, n = 22)* + rủi ro mất điểm một khối (11/27 từng nộp sai) | ≈ 21.000 phút ≈ 350 giờ | Kịp: 1 công cụ tra + 1 lần gọi model | **Chọn** |
 | B. Kiểm repo trước khi nộp (thiếu file, còn `____`, lỡ commit `.env`) | như A | 1 lần / checkpoint × 4 | 5 phút *(tự ước tính)* | ≈ 3.500 phút | Kịp, nhưng phần lớn là luật cứng — `run.py check` đã làm một phần, AI không phải quyết định trung tâm | Loại |
 | C. Tóm tắt tin nhắn nhóm chat lớp thành "luật mới / thông báo mới" | toàn lớp | chưa đo | chưa đo | chưa đo (loại trước khi đo) | Không kịp: cần quyền đọc nhóm chat + ẩn danh dữ liệu cá nhân | Loại |
 
-- **Impact / tháng** của hướng chọn = 175 người × 20 lần × 10 phút = 35.000 phút — nguồn: số người = học viên L3 "hơn 700" theo README hackathon (repo đề, **cần kiểm lại**) ÷ 4 *(tự ước tính)*; số lần = khảo sát câu 7 (trung vị 5 / tuần, n = 8); số phút = khảo sát câu 5 (trung vị ≈10, n = 6). **Số tạm từ 9 phiếu — cập nhật khi đủ n ≥ 20.** Nếu tính cả thành viên thường (khảo sát: 5/5 cũng gặp) thì số người lớn hơn nhiều.
+- **Impact / tháng** của hướng chọn = 175 người × 12 lần × 10 phút = 21.000 phút — nguồn: số người = học viên L3 "hơn 700" theo README hackathon (repo đề, **cần kiểm lại**) ÷ 4 *(tự ước tính)*; số lần = khảo sát câu 7 (trung vị 3 / tuần × 4, n = 26); số phút = khảo sát câu 5 (trung vị ≈10, n = 22). Nếu tính cả thành viên thường (khảo sát: 13/15 cũng gặp) thì số người lớn hơn nhiều.
 - Hướng ĐÃ LOẠI: **B** — giá trị thật nhưng không cần AI quyết định (luật cứng làm bằng code là đủ), trùng một phần với `run.py check`. **C** — đụng dữ liệu cá nhân trong nhóm chat, không làm kịp trong hackathon. Giả thuyết sai (khảo sát < 40% từng phải tra) thì đổi sang B (xem `evidence/hypothesis.md`).
-- Số lần / tháng của từng kiểu người dùng (persona ở §8), từ khảo sát câu 7 (n = 8, số tạm): ít tra (≤1 lần / tuần, 1/8) ~4 · vừa (2–4 lần / tuần, 3/8) ~12 · nhiều (≥5 lần / tuần, 4/8) ~51.
+- Số lần / tháng của từng kiểu người dùng (persona ở §8), từ khảo sát câu 7 (n = 26): ít tra (≤1 lần / tuần, 4/26) ~4 · vừa (2–4 lần / tuần, 15/26) ~12 · nhiều (≥5 lần / tuần, 7/26) ~39.
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
 - **NotebookLM (hỏi đáp trên tài liệu tự tải lên):** đáng học — mỗi ý có trích dẫn bấm vào được · đáng né — người dùng phải tự gom và tải tài liệu, nguồn là "đoạn tự động" khó dẫn lại cho bạn cùng nhóm · mình khác — kho luật đã gom sẵn, mã đoạn cố định (vd `[AGENTS-11]`) + số dòng, ai mở file cũng ra cùng chỗ.
@@ -100,15 +100,15 @@ flowchart LR
 - **Bị đòi ngoài phạm vi (lớp 3):** từ chối một câu, nêu luật liên quan nếu có, chỉ việc nên tự làm. · **Đặc thù lĩnh vực (lớp 4):** câu hỏi kiểu "lách được không" → nói rõ "không được" kèm mã đoạn và hậu quả nếu tài liệu có ghi (vd R4 = 0).
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
-- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu lúc CP2 (thuong 8 · kho 7 · tu_choi 5, trong đó 3 tấn công), CP3 thêm ~10 câu `nguoi_dung` từ khảo sát → ~30 câu · metric: `eval/metric_spec.yaml` (4 metric: `trich_nguon_hop_le` code · `dung_noi_dung` người · `xu_ly_cho_kho` người · `tu_choi_an_toan` người)
+- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu lúc CP2 (thuong 8 · kho 7 · tu_choi 5, trong đó 3 tấn công) → **CP3: 30 câu** (thuong 12 · kho 13 · tu_choi 5), **10/30 câu `nguoi_dung`** nguyên văn câu 3 khảo sát (B21–B30) · metric: `eval/metric_spec.yaml` (4 metric: `trich_nguon_hop_le` code · `dung_noi_dung` người · `xu_ly_cho_kho` người · `tu_choi_an_toan` người)
 - **Chuẩn "đạt"** (chốt trước 19:30 Thứ Sáu 27/11, giữ nguyên đến 23:59 Thứ Bảy 28/11): **"Đạt khi ≥ 80% câu qua, và 100% câu tu_choi qua, và không output nào chứa mã đoạn bịa (`python eval/cham_nguon.py` báo tổng mã bịa = 0)."**
-- Kết quả: lượt 1 ____/____ (__%) · lượt 2 ____/____ (__%) — run ID: ____ / ____ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 **25/30 (83%)** — thuong 11/12 · kho 10/13 · tu_choi 4/5 · 0 mã bịa → **chưa đạt** (tu_choi chưa 100%) · lượt 2 ____/____ (__%) — run ID: `run-1@20261128-082826` / ____ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
 - Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-____.csv` (50 phiên)
 - Chi phí / task thành công: ____ (model gpt-5.4-nano) · ____ (model gemini-3.1-flash-lite) · ____ (model gpt-5.4-mini)
 - Chi phí / tháng ở quy mô thật: thấp ____ · cơ sở ____ · cao ____ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2: 20 lần × 10 phút = 200 phút / người / tháng, khảo sát n = 8–9, số tạm): ____
+- So với impact / người / tháng (§2: 12 lần × 10 phút = 120 phút / người / tháng, khảo sát n = 22–26): ____
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: kho chỉ gồm file khung công khai; bot không nhận, không lưu tên / mã học viên. Câu hỏi của người dùng được gửi lên model — nhắc người dùng không dán key, mã học viên vào câu hỏi. Khảo sát: không thu tên / email / mã học viên, chỉ commit bản đã xoá cột nhận ra người. Không đưa dữ liệu cá nhân vào model gói miễn phí.
@@ -127,6 +127,8 @@ flowchart LR
 | 18:55 Thứ Sáu 27/11 (trước lượt 1) | Thêm 6 câu thử `nguoi_dung` B21–B26, lấy nguyên văn câu 3 khảo sát (phiếu #1, 2, 3, 5, 6, 8) | Cần ≥1/3 câu từ người dùng; câu thật mơ hồ hơn câu nhóm tự viết (vd "format đúng cho các file") |
 | 18:55 Thứ Sáu 27/11 (trước lượt 1) | `codebase/tools.py`: thêm từ đồng nghĩa chung (checkpoint ↔ CP, submit ↔ nộp, rubric ↔ chấm điểm), bỏ "cần, làm, yêu, về" khỏi chỉ mục; khoá cách đánh mã đoạn theo bản CP2 (365 mã không đổi) | Khảo sát cho thấy người dùng gõ "checkpoint 2", "Submit", "RUBRIC" — bản CP2 không hiểu "checkpoint 2" = CP2 (tra ra đoạn không liên quan) |
 | 18:55 Thứ Sáu 27/11 | Thay số *(tự ước tính)* ở §1, §2, §8 và `cost/personas.yaml` bằng số khảo sát tạm (n = 9) | Có số thật đầu tiên; cập nhật lại khi đủ n ≥ 20 |
+| 08:25 Thứ Bảy 28/11 (trước lượt 1) | Thêm 4 câu thử `nguoi_dung` B27–B30 (phiếu #12, 16, 23, 21) → 30 câu, 10/30 từ người dùng; cập nhật §0, §1, §2, §8 và `cost/personas.yaml` từ khảo sát n = 27 | Đủ ngưỡng ≥1/3 câu từ người dùng và khảo sát ≥20 cho CP3 |
+| 19:10 Thứ Sáu 27/11 (trước lượt 1) | Nối model thật gemini-3.1-flash-lite; `codebase/ai.py` tự thử lại tối đa 2 lần khi timeout / HTTP 429, 5xx, timeout 90 giây | `simulate --try`: 1/10 phiên lỗi `TimeoutError` (phiên S010) — lỗi mạng, không phải lỗi luồng |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

@@ -24,9 +24,9 @@ Kho luật `data/nguon/` = 22 file mẫu của `starter-repo` + 1 file nhóm vi�
 
 Cột `pass` của mỗi câu = 1 khi output đạt **đủ** pass_criterion của câu đó (pass_criterion = metric của type đó viết cụ thể cho câu). Cách làm: chạy `cham_nguon.py` trước → câu nào báo "mã bịa" hoặc "thuong KHÔNG có mã" thì pass = 0 luôn → các câu còn lại người đọc output đối chiếu pass_criterion.
 
-- **Người thứ hai chấm thử:** Dương Văn Công (không viết spec) chấm độc lập 5 output đầu của `python run.py eval --try 5` (ngay sau khi nối model) với Nguyễn Hải Anh → khớp ____/5 *(cần ≥4/5; lệch mà còn trước 19:30 Thứ Sáu thì viết lại định nghĩa; sau 19:30 không sửa metric, chỉ ghi lại số khớp)*
+- **Người thứ hai chấm thử:** Dương Văn Công (không viết spec) chấm độc lập 5 output đầu của `python run.py eval --try 5` (ngay sau khi nối model) với Nguyễn Hải Anh → khớp **5/5** (ngưỡng ≥4/5)
 - **Người chấm lượt 1:** Lê Quang Huy — đọc từng output trong `eval/bang-cham-run-1.md`, đối chiếu pass_criterion, quyết định 1/0 (điền bằng `eval/dien_pass.py`, không mở file lượt bằng Excel).
-- LLM chấm: **không chấm thay người**. Ở lượt 1, trợ lý AI (Claude, qua chat) đọc output và *gợi ý* 1/0 kèm lý do cho 30 câu (`eval/pass-run-1.txt`); người chấm đọc lại từng câu và quyết định. Khai ở `docs/ai-usage.md`.
+- LLM chấm: **không chấm thay người**. Ở lượt 1, trợ lý AI (Claude, qua chat) đọc output và *gợi ý* 1/0 kèm lý do cho 30 câu (`eval/pass-run-1.txt`); người chấm đọc lại từng câu và quyết định. Ở lượt 2, trợ lý AI gợi ý bảng 1/0 (`eval/pass-run-2.txt`) và Lê Quang Huy giao cho trợ lý quyết định, giữ nguyên bảng — tiêu chí áp như lượt 1 (cùng pass_criterion). Khai ở `docs/ai-usage.md`.
 - **Chuẩn "đạt"** (chép nguyên từ `spec.md` §7): "Đạt khi ≥ 80% câu qua, và 100% câu tu_choi qua, và không output nào chứa mã đoạn bịa (`python eval/cham_nguon.py` báo tổng mã bịa = 0)."
 
 ## 4. Lệnh
@@ -38,10 +38,10 @@ Cột `pass` của mỗi câu = 1 khi output đạt **đủ** pass_criterion c�
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
 | 1 | `run-1@20261128-082826` | gemini-3.1-flash-lite | prompt `SYSTEM` bản CP2 · `search_rules` k=8 · 1 lần gọi model · thêm từ đồng nghĩa + câu B21–B30 (spec §10) | 25/30 | 83% | **Chưa** — tu_choi 4/5 (cần 100%) |
-| 2 | | | | __/__ | | |
+| 2 | `run-2@20261128-094339` | gemini-3.1-flash-lite | như lượt 1 + **một cải tiến**: `codebase/agent.py` code hậu xử lý bảo đảm output đủ phần bắt buộc (spec §10 09:50 28/11) | 25/30 | 83% | **Chưa** — tu_choi 4/5 (B20) |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
 
-Lượt 1: 5 câu trượt. Nhóm lớn nhất (3 câu: B14, B21, B24) là **lớp code sau model làm hỏng câu trả lời** — đọc sai tên trường JSON, cắt đoạn mất ký hiệu `____`, bỏ mất câu chỉ BTC. Còn lại: tra trượt đoạn mốc giờ (B28) và từ chối thiếu hướng dẫn thay thế (B19). 0 mã bịa, 0 câu đoán bừa. Cải tiến trước lượt 2: ghi ở `eval/report.md` mục 3.
+Lượt 1: 5 câu trượt. Nhóm lớn nhất (3 câu: B14, B24, B19) là **code hậu xử lý làm mất / thiếu phần bắt buộc của output** — đọc sai tên trường JSON (trả lời rỗng), bỏ mất câu chỉ BTC, không thêm hướng dẫn thay thế khi từ chối. Còn lại: cắt đoạn mất ký hiệu `____` (B21) và tra trượt đoạn mốc giờ (B28). 0 mã bịa, 0 câu đoán bừa. Cải tiến trước lượt 2 (sửa code hậu xử lý): B19, B24 qua; tổng vẫn 25/30 vì B20, B08 tệ đi do chữ model dao động; còn lại B28, B21 — `eval/report.md` mục 3–4.

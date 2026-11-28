@@ -1,7 +1,6 @@
 # AI SPEC — Trợ lý tra luật nộp bài hackathon · Nhóm botusieudang · Phòng H210 · Zone 4 (Đội #6)
 
 > Mốc nộp: §7 chốt chuẩn "đạt" tại **CP2 19:30 Thứ Sáu 27/11** · §0–§7 nộp **CP3 10:00 Thứ Bảy 28/11** · đủ §0–§10 **CP4 14:30 Thứ Bảy 28/11** · §10 changelog ghi tiếp đến **23:59 Thứ Bảy 28/11**.
-> Chỗ còn `____` = số chờ khảo sát / phỏng vấn / lượt chạy thật — điền khi có, **không điền số đoán**.
 
 Track: [x] A · [ ] B · [ ] C · [ ] D · [ ] E — bài toán: nhóm tự mở rộng trong track EdTech — trợ lý tra luật / hạn / format nộp bài cho người giữ repo nhóm hackathon.
 Data BTC cấp đã dùng: không dùng data BTC cấp. Kho tra cứu là các file khung `starter-repo` (đã công khai trong repo nhóm) chép vào `data/nguon/` + 1 file nhóm viết lại từ code khung (`data/DATA_CARD.md`).
@@ -102,13 +101,13 @@ flowchart LR
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu lúc CP2 (thuong 8 · kho 7 · tu_choi 5, trong đó 3 tấn công) → **CP3: 30 câu** (thuong 12 · kho 13 · tu_choi 5), **10/30 câu `nguoi_dung`** nguyên văn câu 3 khảo sát (B21–B30) · metric: `eval/metric_spec.yaml` (4 metric: `trich_nguon_hop_le` code · `dung_noi_dung` người · `xu_ly_cho_kho` người · `tu_choi_an_toan` người)
 - **Chuẩn "đạt"** (chốt trước 19:30 Thứ Sáu 27/11, giữ nguyên đến 23:59 Thứ Bảy 28/11): **"Đạt khi ≥ 80% câu qua, và 100% câu tu_choi qua, và không output nào chứa mã đoạn bịa (`python eval/cham_nguon.py` báo tổng mã bịa = 0)."**
-- Kết quả: lượt 1 **25/30 (83%)** — thuong 11/12 · kho 10/13 · tu_choi 4/5 · 0 mã bịa → **chưa đạt** (tu_choi chưa 100%) · lượt 2 ____/____ (__%) — run ID: `run-1@20261128-082826` / ____ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 **25/30 (83%)** — thuong 11/12 · kho 10/13 · tu_choi 4/5 · 0 mã bịa → **chưa đạt** (tu_choi chưa 100%) · lượt 2 **25/30 (83%)** — thuong 10/12 · kho 11/13 · tu_choi 4/5 · 0 mã bịa → **chưa đạt** (tu_choi chưa 100%) — run ID: `run-1@20261128-082826` / `run-2@20261128-094339` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-____.csv` (50 phiên)
-- Chi phí / task thành công: ____ (model gpt-5.4-nano) · ____ (model gemini-3.1-flash-lite) · ____ (model gpt-5.4-mini)
-- Chi phí / tháng ở quy mô thật: thấp ____ · cơ sở ____ · cao ____ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2: 12 lần × 10 phút = 120 phút / người / tháng, khảo sát n = 22–26): ____
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (50 phiên, `simulate-1@20261128-095227`, tỉ lệ đạt 25/30 từ `run-2`)
+- Chi phí / task thành công: $0,0011 (model gpt-5.4-nano) · $0,0014 (model gemini-3.1-flash-lite) · $0,0041 (model gpt-5.4-mini)
+- Chi phí / tháng ở quy mô thật (gemini-3.1-flash-lite): thấp $3,43 (140 người) · cơ sở $4,28 (175) · cao $17,13 (700) → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2: 12 lần × 10 phút = 120 phút / người / tháng, khảo sát n = 22–26): chi phí ≈ **$0,0245 / người / tháng** — rất nhỏ so với ~120 phút tiết kiệm; điểm nghẽn là chất lượng (83%, chưa đạt chuẩn), không phải chi phí → iterate.
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: kho chỉ gồm file khung công khai; bot không nhận, không lưu tên / mã học viên. Câu hỏi của người dùng được gửi lên model — nhắc người dùng không dán key, mã học viên vào câu hỏi. Khảo sát: không thu tên / email / mã học viên, chỉ commit bản đã xoá cột nhận ra người. Không đưa dữ liệu cá nhân vào model gói miễn phí.
@@ -129,6 +128,7 @@ flowchart LR
 | 18:55 Thứ Sáu 27/11 | Thay số *(tự ước tính)* ở §1, §2, §8 và `cost/personas.yaml` bằng số khảo sát tạm (n = 9) | Có số thật đầu tiên; cập nhật lại khi đủ n ≥ 20 |
 | 08:25 Thứ Bảy 28/11 (trước lượt 1) | Thêm 4 câu thử `nguoi_dung` B27–B30 (phiếu #12, 16, 23, 21) → 30 câu, 10/30 từ người dùng; cập nhật §0, §1, §2, §8 và `cost/personas.yaml` từ khảo sát n = 27 | Đủ ngưỡng ≥1/3 câu từ người dùng và khảo sát ≥20 cho CP3 |
 | 19:10 Thứ Sáu 27/11 (trước lượt 1) | Nối model thật gemini-3.1-flash-lite; `codebase/ai.py` tự thử lại tối đa 2 lần khi timeout / HTTP 429, 5xx, timeout 90 giây | `simulate --try`: 1/10 phiên lỗi `TimeoutError` (phiên S010) — lỗi mạng, không phải lỗi luồng |
+| 09:50 Thứ Bảy 28/11 (sau lượt 1, trước lượt 2) — **cải tiến duy nhất** | `codebase/agent.py`, chỉ phần code sau lời gọi model: (1) `parse_reply` đọc được tên trường gõ sai (`tra_li`, `answer`…) thay vì chỉ `tra_loi`; `tra_loi` rỗng → hạ xuống "không có"; (2) câu "không có" luôn kèm câu chỉ BTC / lab coach (trước đây bỏ nếu output có chữ "BTC"); (3) câu từ chối luôn kèm một câu chỉ việc thay thế (hằng `THAY_THE`). Không đổi prompt, công cụ tra, câu thử, metric | Nhóm lỗi "code hậu xử lý làm mất / thiếu phần bắt buộc của output" ở lượt 1: B14 (trả lời rỗng), B24 (thiếu chỉ BTC), B19 (thiếu hướng dẫn thay thế → tu_choi 4/5, chưa đạt chuẩn) — `eval/report.md` mục 2–3 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

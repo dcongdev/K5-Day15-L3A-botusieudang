@@ -23,6 +23,9 @@ MAX_STEPS = 1  # workflow cố định: đúng 1 lần gọi model, không vòng
 LOAI = ("tra_loi", "hoi_lai", "khong_co", "tu_choi")
 HOI_BTC = ("Bạn hỏi trực tiếp BTC / lab coach trên kênh lớp L3A, hoặc xem `02-guide.md`, `03-rubric.md` "
            "trong repo đề.")
+# Phần bắt buộc của câu từ chối (metric tu_choi_an_toan): luôn chỉ người dùng việc thay thế — code thêm, không trông vào model.
+THAY_THE = ("Mình vẫn tra luật nộp bài giúp bạn được: hỏi cụ thể một luật (file nào được / không được commit, "
+            "mốc giờ checkpoint, format file…), hoặc hỏi BTC / lab coach trên kênh lớp L3A.")
 
 SYSTEM = """Bạn là trợ lý tra luật nộp bài hackathon AI20K (khoá K5, lớp L3A) cho người giữ repo của một nhóm.
 Bạn CHỈ được dựa vào các ĐOẠN TÀI LIỆU được đưa kèm, mỗi đoạn có mã trong ngoặc vuông, ví dụ [AGENTS-11].
@@ -80,8 +83,21 @@ def parse_reply(raw):
     nguon = obj.get("nguon") or []
     if isinstance(nguon, str):
         nguon = [nguon]
-    return {"loai": loai if loai in LOAI else "", "tra_loi": str(obj.get("tra_loi") or "").strip(),
+    return {"loai": loai if loai in LOAI else "", "tra_loi": _lay_tra_loi(obj),
             "nguon": [str(c).strip().strip("[]") for c in nguon if str(c).strip()]}
+
+
+def _lay_tra_loi(obj):
+    """Lấy nội dung câu trả lời. Model đôi khi gõ sai tên trường ("tra_li", "traloi", "answer"…) —
+    trước đây đọc mỗi "tra_loi" nên mất cả câu trả lời. Thứ tự: đúng tên → tên gần đúng → chuỗi dài nhất còn lại."""
+    if str(obj.get("tra_loi") or "").strip():
+        return str(obj["tra_loi"]).strip()
+    rest = {k: v for k, v in obj.items() if k not in ("loai", "nguon") and isinstance(v, str) and v.strip()}
+    for k, v in rest.items():
+        key = re.sub(r"[^a-z]", "", str(k).lower())
+        if key.startswith("tra") or key in ("answer", "text", "reply", "noidung", "cautraloi"):
+            return v.strip()
+    return max(rest.values(), key=len).strip() if rest else ""
 
 
 def kiem_nguon(decision, found):
@@ -97,6 +113,9 @@ def kiem_nguon(decision, found):
     if bad:
         note("kiem_nguon: bỏ mã không có trong đoạn tra được: %s" % ", ".join(bad))
     loai = decision["loai"]
+    if loai == "tra_loi" and not CODE_RE.sub("", text).strip(" .,;\n"):
+        note("kiem_nguon: tra_loi nhưng nội dung rỗng → hạ xuống khong_co")
+        loai, text = "khong_co", ""
     if loai == "tra_loi" and not valid:
         note("kiem_nguon: tra_loi nhưng không còn mã hợp lệ → hạ xuống khong_co (G10)")
         loai, text = "khong_co", ""
@@ -112,11 +131,11 @@ def format_output(decision, found):
     if loai == "hoi_lai":
         return text + ("\n\nCác đoạn liên quan: %s" % src if src else "")
     if loai == "tu_choi":
-        out = text or "Mình chỉ tra luật nộp bài, không làm thay việc này."
+        out = (text or "Mình chỉ tra luật nộp bài, không làm thay việc này.") + "\n\n" + THAY_THE
         return out + ("\n\nLuật liên quan: %s" % src if src else "")
     # khong_co
     out = text or "Mình không tìm thấy căn cứ cho câu này trong tài liệu khung (data/nguon/)."
-    if "BTC" not in out:
+    if "lab coach" not in out.lower():  # trước đây: chỉ cần có chữ "BTC" là bỏ câu chỉ đường (vd "bộ đề BTC phát")
         out += " " + HOI_BTC
     near = ", ".join("[%s] %s" % (p["code"], p["file"]) for p in found[:2])
     return out + ("\n\n(Đoạn gần nhất mình tra được, chưa đủ để trả lời: %s)" % near if near else "")

@@ -8,7 +8,7 @@
 | Nguồn | Đạt ngưỡng? | File |
 |---|---|---|
 | Đào data (x/N, %, cách đếm chạy lại được, ≥5 ví dụ) | ☐ không làm — nhóm không có bản xuất nhóm chat lớp đã ẩn danh | — |
-| Phỏng vấn (≥3 người ngoài nhóm, đúng người dùng) | ☐ chưa làm kịp trước CP3 | `evidence/interviews/` (kịch bản: `GUIDE.md`) |
+| Phỏng vấn (≥3 người ngoài nhóm, đúng người dùng) | ☐ mới 1/3 (P1, nhắn tin 09:10 28/11) | `evidence/interviews/P1.md` (kịch bản: `GUIDE.md`) |
 | Khảo sát (≥20 người ngoài nhóm, đúng người dùng) | ☑ n = 27 | `evidence/survey/` (form: `tao_form.gs`, câu hỏi: `questions.md`, kết quả ẩn danh: `results.csv`) |
 
 **Hai đợt thu:** 12 phiếu tối 27/11 (18:05–18:40, thêm 1 phiếu lúc 01:05) và 15 phiếu sáng 28/11 (08:11–08:20, vào liên tiếp trong 8 phút). Theo nhóm, cả 27 phiếu do người thật ngoài nhóm điền. Số tách riêng đợt tối 27/11 (12 phiếu) để đối chiếu: 10/12 đã phải tra trong tuần · trung vị ≈10 phút · 3/12 từng nộp sai.
@@ -16,7 +16,7 @@
 ## 2. Số chính
 
 - Đào data: không làm.
-- Phỏng vấn: chưa có buổi nào.
+- Phỏng vấn: **1 người** (P1 — thành viên nhóm khác lớp L3A, không phải người nộp bài; nhắn tin 09:10 28/11). n = 1 nên chỉ dùng để đối chiếu, không tính tỉ lệ.
 - Khảo sát **n = 27** (vai: thành viên khác 15 · người giữ repo 6 · đội trưởng 6):
   - Đã phải tra / hỏi lại ≥1 luật nộp bài trong 1 tuần qua (câu 2): **23/27 (85%)** — theo vai: thành viên khác 13/15 · người giữ repo 5/6 · đội trưởng 5/6.
   - Lần gần nhất mất (câu 5, 22 người trả lời): trung vị ≈ **10 phút** (lấy giữa khoảng) · ≥5 phút: 15/22 (68%).
@@ -29,7 +29,7 @@ Phỏng vấn nhiều vai thì đếm theo từng vai, không cộng chung.
 
 | | Vai | Gặp pain? | Số lần / 1 tháng qua | Lần gần nhất mất | Đang xoay xở bằng |
 |---|---|---|---|---|---|
-| P1 | *(chưa phỏng vấn)* | | | | |
+| P1 | Thành viên (nhóm trưởng nộp bài) | Có | 4 lần / 1 tuần qua | ≈40 phút tự đọc README / hướng dẫn rồi bỏ cuộc, hỏi lab coach | Hỏi thẳng lab coach khi sắp hết giờ |
 | P2 | | | | | |
 | P3 | | | | | |
 
@@ -43,11 +43,13 @@ Phỏng vấn nhiều vai thì đếm theo từng vai, không cộng chung.
 6. "Đọc luật bài lab và xem xem các file cần Submit là những gì?" — phiếu #6, câu 3 (thành viên khác)
 7. *(ngược giả thuyết)* "Tôi luôn tuân thủ đúng quy tắc và đọc hướng dẫn đầy đủ nên ko cần" — phiếu #4, câu 3 (đội trưởng, chưa bao giờ phải tra)
 8. *(ngược giả thuyết)* "không-vì tìm hiểu kĩ về luật rồi mới nộp" — phiếu #12, câu 8 (thành viên khác)
+9. "Đọc hết các file readme và hướng dẫn, khoảng 40 phút bỏ cuộc rồi mới hỏi labcoach." — P1 (thành viên)
+10. "Cứ hỏi thẳng labcoach khi sắp hết giờ cho họ hướng dẫn nộp là được." — P1 (thành viên)
 
 ## 4. Các nguồn có khớp nhau không
 
-Mới có một nguồn (khảo sát) nên chưa đối chiếu chéo được; phỏng vấn chưa làm kịp. Trong khảo sát, hai đợt thu cho cùng hướng (đợt tối 27/11: 10/12 đã phải tra; cả hai đợt: 23/27). Khảo sát gợi ra hai điều cần kiểm thêm: (a) thành viên thường cũng phải tra (13/15), không chỉ người giữ repo — người dùng có thể rộng hơn lát cắt; (b) 11/27 từng nộp sai và 4/27 "đoán rồi làm" — pain nằm cả ở *làm sai mà không biết*, không chỉ *mất thời gian tra*.
+Khảo sát là nguồn chính; mới có 1 phỏng vấn (P1) nên chỉ đối chiếu sơ bộ. P1 **khớp** khảo sát ở: phải tra nhiều lần (4 lần / tuần — khảo sát TB 4,4), lục README / hướng dẫn trước rồi mới hỏi người (khảo sát: lục tài liệu 17/27), và là *thành viên thường* chứ không phải người nộp bài (khảo sát: 13/15 thành viên thường cũng gặp). P1 **lệch** ở: một lần mất ≈40 phút (khảo sát trung vị ≈10) và chưa từng làm sai (khảo sát 11/27 từng sai) — P1 chịu mất thời gian để chắc chắn thay vì đoán. Cách xoay xở của P1 là hỏi lab coach — đúng chỗ trợ lý muốn thay bớt. Trong khảo sát, hai đợt thu cho cùng hướng (đợt tối 27/11: 10/12 đã phải tra; cả hai đợt: 23/27). Khảo sát gợi ra hai điều cần kiểm thêm: (a) thành viên thường cũng phải tra (13/15), không chỉ người giữ repo — người dùng có thể rộng hơn lát cắt; (b) 11/27 từng nộp sai và 4/27 "đoán rồi làm" — pain nằm cả ở *làm sai mà không biết*, không chỉ *mất thời gian tra*.
 
 ## 5. Kết luận
 
-Giả thuyết ở `evidence/hypothesis.md`: **đúng** — 23/27 (85%) đã phải tra trong tuần (ngưỡng ≥60%), trung vị ≈10 phút (ngưỡng ≥5 phút). Điều vẫn chưa biết: phỏng vấn chưa làm nên chưa nghe được một lần tra cụ thể từ đầu đến cuối; chưa rõ người dùng chính nên mở rộng từ "người giữ repo" sang mọi thành viên không; số lần / tuần khá phân tán (0 đến 20).
+Giả thuyết ở `evidence/hypothesis.md`: **đúng** — 23/27 (85%) đã phải tra trong tuần (ngưỡng ≥60%), trung vị ≈10 phút (ngưỡng ≥5 phút). Điều vẫn chưa biết: mới 1/3 phỏng vấn nên mới nghe được một lần tra cụ thể (P1: ≈40 phút rồi hỏi lab coach); chưa rõ người dùng chính nên mở rộng từ "người giữ repo" sang mọi thành viên không; số lần / tuần khá phân tán (0 đến 20).

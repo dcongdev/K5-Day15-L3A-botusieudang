@@ -24,7 +24,7 @@
 | Việc | Ai | Lệnh / file |
 |---|---|---|
 | Chốt khảo sát (n ≥ 20 ngoài nhóm), ẩn danh → `evidence/survey/results.csv`, chạy script | Huy | `python evidence/survey/count_survey.py` |
-| Chọn ~10 câu thật trong `evidence/survey/benchmark-candidates.csv`, viết `expected` + `pass_criterion` **từ `data/nguon/`** (không nhìn output bot), thêm vào `eval/benchmark.csv` id B21… (tổng ≤30, ≥1/3 `nguoi_dung`) | Hải Anh + Huy | `python run.py check` |
+| **Đã có B21–B26 (6 câu thật).** Chọn thêm **≥4 câu thật** trong `evidence/survey/benchmark-candidates.csv` (phiếu mới) hoặc từ phỏng vấn, viết `expected` + `pass_criterion` **từ `data/nguon/`** (không nhìn output bot), thêm vào `eval/benchmark.csv` id B21… (tổng ≤30, ≥1/3 `nguoi_dung`) | Hải Anh + Huy | `python run.py check` |
 | Phỏng vấn ≥3 người → `P1.md`–`P3.md`; điền `evidence/summary.md` (số chính, ≥5 trích dẫn, kết luận giả thuyết) | Huy | — |
 | Điền số thật vào `spec.md` §1 + §2 (thay các thừa số *(tự ước tính)*), `cost/personas.yaml` (share từ câu 7) | Huy, Công | — |
 | **Lượt 1:** `python run.py eval` → `eval/run-1.csv` + `traces/run-1.jsonl` | Nguyên | `--wait 4` nếu gói miễn phí |

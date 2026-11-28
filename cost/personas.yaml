@@ -1,6 +1,6 @@
 # Mô phỏng chi phí khi dùng thật — botusieudang. Điền ở guide bước 4.2.
 # Mọi số phải có nguồn hoặc ghi rõ "(tự ước tính)". Sau khi có khảo sát: thay share / uses_per_month
-# bằng số in ra từ `python evidence/survey/count_survey.py` (câu 7), sửa source cho khớp.
+# bằng số in ra từ `python evidence/survey/count_survey.py` (câu 7), sửa source cho khớp. Bản hiện tại: số tạm n = 8 (27/11 18:33).
 # Chạy: python run.py simulate --try   (10 phiên, kiểm khung — làm trước CP3)
 #       python run.py simulate         (50 phiên — bản nộp CP4)
 
@@ -15,20 +15,20 @@ users:              # người giữ repo / đội trưởng các nhóm L3 (ngư
 
 personas:           # share cộng lại = 1
   - name: it_tra
-    share: 0.5
-    uses_per_month: 4       # ~1 lần / tuần
+    share: 0.12
+    uses_per_month: 4       # ≤1 lần / tuần
     turns_per_session: 1
-    source: "(tự ước tính) thành viên chỉ tra khi sắp nộp — thay bằng tỉ lệ ≤1 lần / tuần ở câu 7 khảo sát"
+    source: "khảo sát câu 7 (n = 8, số tạm 27/11): 1/8 tra ≤1 lần / tuần; số phiên 4 / tháng và số lượt / phiên: (tự ước tính)"
   - name: tra_vua
-    share: 0.35
-    uses_per_month: 8       # ~2 lần / tuần
+    share: 0.38
+    uses_per_month: 12      # TB 3 lần / tuần × 4
     turns_per_session: 2
-    source: "(tự ước tính) người giữ repo tra mỗi checkpoint — thay bằng tỉ lệ 2–4 lần / tuần ở câu 7 khảo sát"
+    source: "khảo sát câu 7 (n = 8, số tạm 27/11): 3/8 tra 2–4 lần / tuần, TB 3 lần / tuần; số lượt / phiên: (tự ước tính)"
   - name: tra_nhieu
-    share: 0.15
-    uses_per_month: 20      # ~5 lần / tuần
+    share: 0.50
+    uses_per_month: 51      # TB 12,8 lần / tuần × 4
     turns_per_session: 3
-    source: "(tự ước tính) đội trưởng tra liên tục trước mốc — thay bằng tỉ lệ ≥5 lần / tuần ở câu 7 khảo sát"
+    source: "khảo sát câu 7 (n = 8, số tạm 27/11): 4/8 tra ≥5 lần / tuần, TB 12,8 lần / tuần; số lượt / phiên: (tự ước tính)"
 # Mỗi lượt hỏi lấy ngẫu nhiên một đầu vào trong eval/benchmark.csv (type thuong và kho).
 
 prices:             # USD / 1 triệu token, giá gói trả phí. Đối chiếu lại với further-reading/model-prices.md của repo đề.

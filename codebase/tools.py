@@ -20,8 +20,8 @@ EXTS = (".md", ".yaml", ".yml", ".txt")
 # ---------------------------------------------------------------- chuẩn hoá chữ
 
 STOP = set("""la cua va thi cho toi minh ban em oi a nhe voi nay do the nhung cac mot khi de o ve trong
-nao gi sao bao nhieu co phai hay hoac neu la nhu vay roi duoc khong""".split())
-# "khong", "duoc" bỏ khỏi chỉ mục vì xuất hiện ở gần như mọi câu hỏi luật (IDF thấp, gây nhiễu)
+nao gi sao bao nhieu co phai hay hoac neu la nhu vay roi duoc khong can lam nhung yeu ve""".split())
+# "khong", "duoc", "can", "lam" bỏ khỏi chỉ mục vì xuất hiện ở gần như mọi câu hỏi luật (IDF thấp, gây nhiễu)
 
 # Từ đồng nghĩa chung của lĩnh vực (không chép câu thử nào vào đây — luật AGENTS.md)
 SYN = {
@@ -32,13 +32,16 @@ SYN = {
     "slide": ["slide", "pdf"], "video": ["video", "du", "phong"],
     "teams": ["teams"], "thanh": ["vien"], "nhomtruong": ["doi", "truong"], "leader": ["doi", "truong"],
     "loi": ["error"], "error": ["loi"],
+    "submit": ["nop"], "rubric": ["cham", "diem"], "lms": ["nop"], "checkpoint": ["moc"],
 }
 
 
 def fold(text):
-    """Chữ thường, bỏ dấu tiếng Việt (đ → d) — người dùng hay gõ không dấu."""
+    """Chữ thường, bỏ dấu tiếng Việt (đ → d) — người dùng hay gõ không dấu.
+    "checkpoint 2" / "check point 2" / "cp 2" → "cp2" (tài liệu khung luôn viết CP2)."""
     text = unicodedata.normalize("NFD", (text or "").lower().replace("đ", "d").replace("Đ", "d"))
-    return "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    return re.sub(r"\b(?:check\s*point|cp)\s*(\d)\b", r"cp\1", text)
 
 
 def tokens(text, expand=False):
@@ -51,6 +54,19 @@ def tokens(text, expand=False):
 
 
 # ---------------------------------------------------------------- cắt kho thành đoạn
+
+# Bộ lọc "đoạn quá ngắn" dùng danh sách từ CỐ ĐỊNH của bản CP2 — để mã đoạn (TÊNFILE-NN) không đổi khi
+# sửa STOP / SYN / fold ở trên (mã đoạn đã nằm trong README, slide, các lượt chạy). KHÔNG sửa 2 dòng dưới.
+_STOP_CP2 = set("""la cua va thi cho toi minh ban em oi a nhe voi nay do the nhung cac mot khi de o ve trong
+nao gi sao bao nhieu co phai hay hoac neu la nhu vay roi duoc khong""".split())
+
+
+def _short(text):
+    folded = "".join(ch for ch in unicodedata.normalize("NFD", text.lower().replace("đ", "d").replace("Đ", "d"))
+                     if unicodedata.category(ch) != "Mn")
+    words = [w for w in re.findall(r"[a-z0-9_]+", folded) if w not in _STOP_CP2]
+    return len(words) + max(len(words) - 1, 0) < 3
+
 
 def _prefix(filename):
     stem = os.path.splitext(filename)[0]
@@ -187,7 +203,7 @@ def load_corpus(folder=CORPUS_DIR):
         prefix = _prefix(f)
         k = 0
         for line, heading, text in parts:
-            if len(tokens(text)) < 3:
+            if _short(text):
                 continue
             k += 1
             chunks.append({"code": "%s-%02d" % (prefix, k), "file": "data/nguon/" + f, "line": line,

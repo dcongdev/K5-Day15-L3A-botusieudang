@@ -2,7 +2,7 @@
 
 > Làm ở guide bước 5.1. Luật: **không có bằng chứng thì không có slide** — mỗi trang ≥1 con số / trích dẫn có nguồn / kết quả đo.
 > Xuất PDF thành `demo-slides.pdf` ở thư mục gốc repo, nộp tại CP4 14:30 Thứ Bảy 28/11. Nộp PDF, không nộp link.
-> Bản slide: `slides/demo-slides.html` (8 trang, mở bằng Chrome → In → Lưu dạng PDF → `demo-slides.pdf` ở thư mục gốc).
+> Bản slide nộp: `demo-slides.pdf` ở thư mục gốc repo (8 trang, làm trên Google Slides).
 
 | # | Trang | Có gì | Số lấy từ | Xong |
 |---|---|---|---|---|
